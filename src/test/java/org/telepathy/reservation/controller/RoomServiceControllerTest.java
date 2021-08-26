@@ -9,8 +9,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.telepathy.reservation.BaseTest;
 import org.telepathy.reservation.config.AppConfigTest;
-import org.telepathy.reservation.exception.InvalidRoomNumberException;
-import org.telepathy.reservation.exception.InvalidRoomServiceException;
 
 import lombok.SneakyThrows;
 
@@ -24,7 +22,7 @@ public class RoomServiceControllerTest extends BaseTest {
 
 	@SneakyThrows
 	@Test
-	public void TestRunThrough() throws InvalidRoomNumberException, InvalidRoomServiceException {
+	public void TestRunThrough() {
 		ResponseEntity availableRooms = roomServiceController.getAvailableRooms();
 		Object body = availableRooms.getBody();
 		Object room1 = roomServiceController.checkIn().getBody();
